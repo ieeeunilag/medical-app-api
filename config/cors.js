@@ -29,6 +29,6 @@
 module.exports.cors = {
   allRoutes: true,
   origin: '*',
-  credentials: false
-
+  credentials: false,
+  headers: 'authorization, content-type',
 };
