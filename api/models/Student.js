@@ -32,10 +32,6 @@ module.exports = {
       type: 'string',
       required: true,
     },
-    matricNo: {
-      type: 'string',
-      required: true,
-    },
     otherNameKin: {
       type: 'string',
       required: true,
@@ -43,11 +39,6 @@ module.exports = {
     otherNames: {
       type: 'string',
       required: true,
-    },
-    password: {
-      type: 'string',
-      required: true,
-      protected: true,
     },
     sex: {
       type: 'string',
