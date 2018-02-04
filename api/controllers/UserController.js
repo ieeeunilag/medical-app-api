@@ -21,14 +21,19 @@ module.exports = {
 
   login(req, res) {
     console.log(req.body);
-    User.findOne({ matricNo: req.body.matricNo }).then((user) => {
+    User.findOne({ uniqueId: req.body.uniqueId }).then((user) => {
       console.log(user);
       return bcrypt.compareSync(req.body.password, user.password);
     }).then((result) => {
       if (result) {
+        const uniqueId = req.body.uniqueId;
+        const role = req.body.role;
 
         const token = jwt.sign({
-          data: req.body.matricNo
+          data: {
+            uniqueId,
+            role,
+          },
         },
           sails.config.jwtSecret,
           { expiresIn: '1d' }

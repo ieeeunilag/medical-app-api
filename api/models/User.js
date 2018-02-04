@@ -8,35 +8,7 @@ const bcrypt = require('bcryptjs');
 module.exports = {
 
   attributes: {
-    address: {
-      type: 'string',
-      required: true,
-    },
-    age: {
-      type: 'string',
-      required: true,
-    },
-    email: {
-      type: 'string',
-      required: true,
-    },
-    ethnicGroup: {
-      type: 'string',
-      required: true,
-    },
-    gsm: {
-      type: 'string',
-      required: true,
-    },
-    matricNo: {
-      type: 'string',
-      required: true,
-    },
-    otherNameKin: {
-      type: 'string',
-      required: true,
-    },
-    otherNames: {
+    uniqueId: {
       type: 'string',
       required: true,
     },
@@ -45,24 +17,10 @@ module.exports = {
       required: true,
       protected: true,
     },
-    sex: {
+    type: {
       type: 'string',
+      enum: ['Student', 'Staff', 'Doctor','Nurse','Lab attendant'],
       required: true,
-    },
-    staffOrStudent: {
-      type: 'string',
-      required: true,
-    },
-    surname: {
-      type: 'string',
-      required: true,
-    },
-    surnameKin: {
-      type: 'string',
-      required: true,
-    },
-    telephoneOffice: {
-      type: 'string',
     }
 
   },
