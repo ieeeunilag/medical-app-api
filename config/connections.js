@@ -18,10 +18,9 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html
  */
+var parse = require('pg-connection-string').parse;
 
-import {parse} from 'pg-connection-string';
-
-const config = parse(process.env.DATABASE_URL);
+var config = parse(process.env.DATABASE_URL);
 module.exports.connections = {
 
   /***************************************************************************
