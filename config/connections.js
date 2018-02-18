@@ -18,9 +18,7 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html
  */
-var parse = require('pg-connection-string').parse;
 
-var config = parse(process.env.DATABASE_URL);
 module.exports.connections = {
 
   /***************************************************************************
@@ -31,10 +29,6 @@ module.exports.connections = {
   *                                                                          *
   ***************************************************************************/
 
-  postgresqlServer: {
-    adapter: 'sails-postgresql',
-    ...config,
-  },
   /***************************************************************************
   *                                                                          *
   * MySQL is the world's most popular relational database.                   *
