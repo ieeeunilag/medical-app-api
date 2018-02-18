@@ -17,8 +17,14 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
-  models: {
-    connection: 'someMongodbServer'
+  connections: {
+    mongodbServer: {
+      adapter: 'sails-mongo',
+      host: 'localhost',
+      port: 27017,
+      // user: process.env.DATABASE_USER, //optional
+      // password: process.env.DATABASE_PASSWORD, //optional
+      database: 'medical' //optional
+    },
   }
-
 };
