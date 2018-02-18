@@ -19,6 +19,9 @@
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html
  */
 
+import {parse} from 'pg-connection-string';
+
+const config = parse(process.env.DATABASE_URL);
 module.exports.connections = {
 
   /***************************************************************************
@@ -28,10 +31,10 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
+
   postgresqlServer: {
     adapter: 'sails-postgresql',
-    host: process.env.DATABASE_URL,
-    database: 'medical',
+    ...config,
   },
   /***************************************************************************
   *                                                                          *
