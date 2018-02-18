@@ -1,10 +1,10 @@
 /**
  * User.js
  *
- * @description :: TODO: You might write a short summary of how this model works and what it represents here.
- * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
- */
+*/
+/* eslint no-param-reassign: ["error", { "props": false }] */
 const bcrypt = require('bcryptjs');
+
 module.exports = {
 
   attributes: {
@@ -19,17 +19,17 @@ module.exports = {
     },
     type: {
       type: 'string',
-      enum: ['Student', 'Staff', 'Doctor','Nurse','Lab attendant'],
+      enum: ['Student', 'Staff', 'Doctor', 'Nurse', 'Lab attendant'],
       required: true,
-    }
+    },
 
   },
-  afterValidate(values,cb){
+  afterValidate(values, cb) {
     if ('password' in values) {
-      values['password'] = bcrypt.hashSync(values['password']);
+      values.password = bcrypt.hashSync(values.password);
     }
     cb();
-  }
+  },
 
 
 };
