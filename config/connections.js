@@ -28,10 +28,11 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
-  localDiskDb: {
-    adapter: 'sails-disk'
+  postgresqlServer: {
+    adapter: 'sails-postgresql',
+    host: process.env.DATABASE_URL,
+    database: 'medical',
   },
-
   /***************************************************************************
   *                                                                          *
   * MySQL is the world's most popular relational database.                   *
